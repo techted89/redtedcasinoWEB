@@ -13,14 +13,9 @@ async def main():
         # Go to the local HTML file
         await page.goto(f'file://{file_path}')
 
-        # Wait for the page to load completely
+        # Wait for the page to load completely and for the countdown to initialize
         await page.wait_for_load_state('networkidle')
-
-        # Click the "Roll Dice" button
-        await page.click('#roll-button')
-
-        # Wait for the result to be displayed
-        await page.wait_for_selector('#dice-result:not(:empty)')
+        await page.wait_for_timeout(1100) # Wait a little over a second for the timer to tick
 
         # Take a screenshot
         await page.screenshot(path='jules-scratch/verification/verification.png')

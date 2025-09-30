@@ -69,4 +69,31 @@ document.addEventListener('DOMContentLoaded', function() {
         point = 0;
         isFirstRoll = true;
     }
+
+    // Countdown Timer Logic
+    const countdownTimer = document.getElementById('countdown-timer');
+    if (countdownTimer) {
+        // Set the date we're counting down to: 1 week from Sep 30, 2026, midnight PST/PDT
+        const countDownDate = new Date("2026-10-07T00:00:00-07:00").getTime();
+
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+
+            if (distance < 0) {
+                clearInterval(x);
+                countdownTimer.innerHTML = "The wait is over! Welcome to RedTedCasino!";
+            }
+        }, 1000);
+    }
 });
