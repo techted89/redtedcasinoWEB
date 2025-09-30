@@ -115,3 +115,12 @@ footer {
     margin-top: 1em;
     color: #ffc107;
 }
+
+.instructions {
+    text-align: left;
+    max-width: 300px;
+    margin: 1em auto;
+    background-color: #333;
+    padding: 1em;
+    border-radius: 4px;
+}

@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
         'https://upload.wikimedia.org/wikipedia/commons/2/26/Dice-6-b.svg'
     ];
 
+    let point = 0;
+    let isFirstRoll = true;
+
     if (signupForm) {
         signupForm.addEventListener('submit', function(event) {
             event.preventDefault();
@@ -22,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = emailInput.value;
 
             if (email) {
-                // Replace form with a thank you message
                 signupSection.innerHTML = '<h3>Thank You!</h3><p>You have been added to our mailing list. We will notify you when we launch!</p>';
             }
         });
@@ -37,7 +39,34 @@ document.addEventListener('DOMContentLoaded', function() {
             dice1.src = diceImages[roll1];
             dice2.src = diceImages[roll2];
 
-            diceResult.textContent = `You rolled a ${total}!`;
+            if (isFirstRoll) {
+                if (total === 7 || total === 11) {
+                    diceResult.textContent = `You rolled a ${total}. You win!`;
+                    resetGame();
+                } else if (total === 2 || total === 3 || total === 12) {
+                    diceResult.textContent = `You rolled a ${total}. You lose.`;
+                    resetGame();
+                } else {
+                    point = total;
+                    diceResult.textContent = `You rolled a ${total}. That's the Point! Roll again.`;
+                    isFirstRoll = false;
+                }
+            } else {
+                if (total === point) {
+                    diceResult.textContent = `You rolled a ${total}. You win!`;
+                    resetGame();
+                } else if (total === 7) {
+                    diceResult.textContent = `You rolled a 7. You lose.`;
+                    resetGame();
+                } else {
+                    diceResult.textContent = `You rolled a ${total}. Roll again.`;
+                }
+            }
         });
+    }
+
+    function resetGame() {
+        point = 0;
+        isFirstRoll = true;
     }
 });
