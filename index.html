@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedTedCasino - Coming Soon!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>RedTedCasino.com</h1>
+    </header>
+    <main>
+        <section id="coming-soon">
+            <h2>Grand Opening Coming Soon!</h2>
+            <p>Get ready for an exciting new online gaming experience, with beta testing starting in <strong>Redding, CA!</strong></p>
+            <p>Our grand opening is just around the corner. The countdown has begun!</p>
+        </section>
+
+        <section id="countdown">
+            <div id="countdown-timer">
+                <div><span id="days"></span><span>Days</span></div>
+                <div><span id="hours"></span><span>Hours</span></div>
+                <div><span id="minutes"></span><span>Minutes</span></div>
+                <div><span id="seconds"></span><span>Seconds</span></div>
+            </div>
+        </section>
+
+        <section id="signup">
+            <h3>Be the First to Know!</h3>
+            <p>Join our private beta test group and help us shape the future of online gaming. Don't forget to bookmark this page on your mobile or PC for the latest updates!</p>
+            <p class="important-notice"><strong>Important:</strong> The signup form below is for pre-launch interest. Due to gaming laws, final registration will be handled via secure, private invites through email and social media. This form will become non-functional at launch.</p>
+            <form id="signup-form">
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                <button type="submit">Notify Me</button>
+            </form>
+        </section>
+        <section id="dice-game">
+            <h3>Red Ted's Dice!</h3>
+            <p>A simplified version of the classic casino game, Craps.</p>
+            <p class="instructions">
+                <strong>First Roll:</strong><br>
+                - Roll a 7 or 11, you win!<br>
+                - Roll a 2, 3, or 12, you lose.<br>
+                - Any other number becomes the 'Point'.<br>
+                <strong>Subsequent Rolls:</strong><br>
+                - Roll the 'Point' again, you win!<br>
+                - Roll a 7, you lose.
+            </p>
+            <div id="dice-container">
+                <img id="dice1" class="dice" src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Dice-1-b.svg" alt="Dice 1">
+                <img id="dice2" class="dice" src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Dice-1-b.svg" alt="Dice 2">
+            </div>
+            <button id="roll-button" type="button">Roll Dice</button>
+            <p id="dice-result">Let's play! Click "Roll Dice" to start.</p>
+        </section>
+
+        <section id="dev-status">
+            <h3>Development Status</h3>
+            <div class="status-column">
+                <h4>Completed Features:</h4>
+                <ul>
+                    <li>7 slots, 1 card table game, one Fish (shooter) game implemented</li>
+                    <li>Functional server API and client frontend</li>
+                    <li>User registration</li>
+                    <li>Encrypted data</li>
+                    <li>Universal code implementation UI and User interface for multiple platforms (Android, iPhone, Linux, Windows, and more)</li>
+                    <li>Server-side advanced RNG Logic for Fair Game Play</li>
+                    <li>Multi-level encrypted Database with complete server-side Data handling to prevent hacking</li>
+                </ul>
+            </div>
+            <div class="status-column">
+                <h4>Work in Progress:</h4>
+                <ul>
+                    <li>Finish more games and add resources for games to use (more fish games and different levels)</li>
+                    <li>More advanced slot mechanics and different gameplay and bonuses</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Programmed by TED_D | I ♥️ Red TedCasino</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
